@@ -3,6 +3,9 @@
     height: 83vh;
     margin-bottom: 6rem;
   }
+  .section__text{
+    margin-top: 50%;
+  }
   .about-containers {
     flex-wrap: wrap;
   }
@@ -10,11 +13,20 @@
   #projects {
     height: fit-content;
   }
+  #section__text{
+    margin-top: 25%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
+  }
+  .section__text{
+    margin-top: 50%;
+  }
+  #section__text{
+    margin-top: 25%;
   }
   #hamburger-nav {
     display: flex;
@@ -49,7 +61,10 @@
 
 @media screen and (max-width: 600px) {
   #about{
-    margin-top: -37%;
+    margin-top: -22%;
+  }
+  .section__text{
+    margin-top: 60%;
   }
   #experience{
     margin-top: -28%;
