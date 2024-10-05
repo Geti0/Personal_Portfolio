@@ -1,0 +1,9 @@
+# Ignore sensitive files
+config.ini
+secrets/
+
+# Ignore all .env files          
+/assets/          
+/index.html       
+/script.js       
+/style.css       
