@@ -60,11 +60,8 @@
 }
 
 @media screen and (max-width: 600px) {
-  #about{
-    margin-top: -22%;
-  }
   .section__text{
-    margin-top: 60%;
+    margin-top: 70%;
   }
   #experience{
     margin-top: -28%;
