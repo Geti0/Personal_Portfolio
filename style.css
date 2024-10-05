@@ -11,8 +11,7 @@
   width: 500px;
   height: 400px;
   border-radius: 50%;
-  border: 5px solid #000; /* Set border width and color */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border: 5px solid #000; 
 }
 #title{
   margin-bottom: -10%;
