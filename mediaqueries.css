@@ -120,6 +120,10 @@
   #contact-text{
     margin-top: 10%;
   }
+  #profile-image{
+    width: 250px;
+    height: 300px;
+  }
   .contact-card {
     max-width: 90%;
     padding: 15px;
