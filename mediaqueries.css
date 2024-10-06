@@ -22,12 +22,7 @@
   #desktop-nav {
     display: none;
   }
-  .section__text{
-    margin-top: 50%;
-  }
-  #section__text{
-    margin-top: 25%;
-  }
+
   #hamburger-nav {
     display: flex;
   }
@@ -121,24 +116,22 @@
 }
 
 
-
-
-
-
-/* Media query for max-width: 600px */
 @media screen and (max-width: 600px) {
-  /* Make the contact card full width */
+
   .contact-card {
     max-width: 100%;
     padding: 15px;
   }
-
-  /* Ensure all input fields have the same width and appear in a row */
   .inline-fields {
-    flex-direction: column; /* Stack fields vertically */
+    flex-direction: column;
     width: 100%;
   }
-
+  .details-container{
+      width: 288px;
+  }
+  #first-name{
+    width: 288px;
+  }
   #contact-text{
     margin-top: 10%;
   }
@@ -152,18 +145,18 @@
   }
   .field {
     width: 100%;
-    margin-bottom: 15px; /* Add spacing between fields */
+    margin-bottom: 15px; 
   }
   #subject{
     width: 100%;
-    margin-bottom: 15px; /* Add spacing between fields */
+    margin-bottom: 15px; 
   }
   #email{
     width: 100%;
-    margin-bottom: 15px; /* Add spacing between fields */
+    margin-bottom: 15px; 
   }
   .submit-btn {
-    width: 100%; /* Full-width button */
+    width: 100%; 
     margin-top: -40px;
     margin-bottom: 30px;
   }
