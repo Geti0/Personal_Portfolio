@@ -29,7 +29,7 @@
         <!-- Image -->
         <div class="relative overflow-hidden aspect-[16/10] group">
           <img
-            :src="project.image"
+            :src="useAsset(project.image)"
             :alt="project.alt"
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           >

@@ -16,7 +16,7 @@
         <div class="p-2">
           <img
             ref="profileImgRef"
-            :src="data.profileImage"
+            :src="useAsset(data.profileImage)"
             :alt="`${data.name} profile picture`"
             class="w-full aspect-square object-cover rounded-sm"
           >

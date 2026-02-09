@@ -9,7 +9,7 @@
            hover:-translate-y-1.5 hover:scale-110 hover:shadow-glow
            hover:bg-terminal-green/10 hover:border-terminal-green/30"
   >
-    <img :src="icon" :alt="label" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity">
+    <img :src="useAsset(icon)" :alt="label" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity">
   </a>
 </template>
 
