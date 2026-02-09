@@ -32,12 +32,16 @@ export default <Config>{
           'card-hover': '#161b22',
           surface: '#161b22',
         },
-        'text-primary': '#e6edf3',
-        'text-secondary': '#8b949e',
-        'text-muted': '#484f58',
-        'border-subtle': 'rgba(48, 54, 61, 0.8)',
-        'border-light': 'rgba(48, 54, 61, 1)',
-        'border-glow': 'rgba(0, 255, 65, 0.2)',
+        text: {
+          primary: '#e6edf3',
+          secondary: '#8b949e',
+          muted: '#484f58',
+        },
+        border: {
+          subtle: 'rgba(48, 54, 61, 0.8)',
+          light: 'rgba(48, 54, 61, 1)',
+          glow: 'rgba(0, 255, 65, 0.2)',
+        },
       },
       boxShadow: {
         sm: '0 2px 10px rgba(0, 0, 0, 0.4)',
