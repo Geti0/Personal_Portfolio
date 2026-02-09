@@ -30,6 +30,7 @@ export interface ServiceData {
   title: string
   description: string
   stack: string[]
+  details: string[]
 }
 
 export interface ExperienceData {

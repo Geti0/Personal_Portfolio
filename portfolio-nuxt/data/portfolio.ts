@@ -54,6 +54,14 @@ export const portfolioData: PortfolioData = {
       description:
         'Designing custom, scalable cloud architectures with seamless Infrastructure as Code and powerful AWS deployment.',
       stack: ['AWS', 'Azure', 'Terraform', 'CloudFormation'],
+      details: [
+        'AWS (EC2, S3, EKS, Lambda, RDS, CloudFront) \u2014 full-stack cloud provisioning and management',
+        'Terraform \u2014 Infrastructure as Code for reproducible, version-controlled environments',
+        'CloudFormation \u2014 AWS-native stack templating for complex multi-service architectures',
+        'Azure \u2014 multi-cloud strategy with Azure VMs, AKS, and Blob Storage',
+        'VPC design, subnets, security groups, and IAM policies for secure networking',
+        'Cost optimization through reserved instances, spot fleets, and right-sizing',
+      ],
     },
     {
       number: '02',
@@ -61,6 +69,14 @@ export const portfolioData: PortfolioData = {
       description:
         'Building seamless, high-performing deployment pipelines that unite development and operations scalably.',
       stack: ['GitHub Actions', 'Jenkins', 'ArgoCD', 'GitLab CI'],
+      details: [
+        'GitHub Actions \u2014 custom workflows for build, test, lint, and deploy automation',
+        'Jenkins \u2014 self-hosted pipelines with shared libraries and parallel stages',
+        'ArgoCD \u2014 GitOps-driven continuous delivery to Kubernetes clusters',
+        'GitLab CI \u2014 integrated pipelines with auto-DevOps and environment management',
+        'Blue-green and canary deployment strategies for zero-downtime releases',
+        'Trivy & Snyk \u2014 automated security scanning integrated into every pipeline',
+      ],
     },
     {
       number: '03',
@@ -68,6 +84,14 @@ export const portfolioData: PortfolioData = {
       description:
         'Containerizing applications with Docker and orchestrating at scale with Kubernetes, Helm charts, and service meshes.',
       stack: ['Docker', 'Kubernetes', 'Helm', 'Istio'],
+      details: [
+        'Docker \u2014 multi-stage builds, optimized images, and Docker Compose for local dev',
+        'Kubernetes \u2014 production clusters with auto-scaling, rolling updates, and RBAC',
+        'Helm \u2014 templated chart management for repeatable application deployments',
+        'Istio \u2014 service mesh for traffic management, mTLS, and observability',
+        'Container security hardening with image scanning and runtime policies',
+        'Persistent storage, ConfigMaps, Secrets, and Ingress controller configuration',
+      ],
     },
     {
       number: '04',
@@ -75,6 +99,14 @@ export const portfolioData: PortfolioData = {
       description:
         'Building comprehensive monitoring dashboards and alerting systems for production reliability and uptime.',
       stack: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog'],
+      details: [
+        'Prometheus \u2014 metrics collection with custom exporters and alerting rules',
+        'Grafana \u2014 real-time dashboards for infrastructure, application, and business metrics',
+        'ELK Stack (Elasticsearch, Logstash, Kibana) \u2014 centralized log aggregation and search',
+        'Datadog \u2014 full-stack APM with distributed tracing and anomaly detection',
+        'PagerDuty / Opsgenie integration for on-call alerting and incident response',
+        'SLO/SLI tracking and error budget management for reliability engineering',
+      ],
     },
   ],
 
