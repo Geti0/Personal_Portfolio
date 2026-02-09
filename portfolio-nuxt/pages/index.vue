@@ -3,9 +3,11 @@
     <SectionsHeroSection />
     <SectionsAboutSection />
     <SectionsServicesSection />
+    <SectionsWorkSection />
     <SectionsExperienceSection />
     <SectionsSkillsSection />
-    <SectionsWorkSection />
+    <SectionsTestimonialsSection />
+    <SectionsArticlesSection />
     <SectionsContactSection />
   </div>
 </template>

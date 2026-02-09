@@ -1,98 +1,89 @@
 <template>
-  <section id="contact" class="flex flex-col items-center justify-center px-6 md:px-16 py-20">
-    <UiSectionHeader subtitle="contact" title="Open Connection" />
+  <section id="contact" class="px-6 md:px-16 lg:px-20 py-24 bg-gray-50">
+    <div class="max-w-[600px] mx-auto">
+      <div class="section-label">CONTACT</div>
 
-    <div class="terminal-window max-w-[600px] w-full mx-auto mt-4">
-      <div class="terminal-header">
-        <div class="terminal-dot terminal-dot-red" />
-        <div class="terminal-dot terminal-dot-amber" />
-        <div class="terminal-dot terminal-dot-green" />
-        <span class="terminal-title">contact@getuar -- ssh</span>
+      <!-- Success Message -->
+      <div v-if="isSuccess" class="text-center py-12">
+        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <p class="text-xl font-semibold text-gray-900 mb-2">Message sent!</p>
+        <p class="text-gray-500 text-sm">I'll get back to you within 24 hours.</p>
       </div>
 
-      <div class="p-6 md:p-10">
-        <!-- Success Message -->
-        <div v-if="isSuccess" class="text-center py-8 font-mono">
-          <div class="text-terminal-green text-4xl mb-4 text-glow-green">
-            &#10003;
+      <!-- Form -->
+      <form v-else class="space-y-5" @submit.prevent="handleSubmit">
+        <p class="text-gray-500 text-sm mb-6">
+          Ready to bring your ideas to life? Let's connect.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-gray-700 text-sm font-medium mb-1.5 block">First Name</label>
+            <input
+              v-model="form.firstName"
+              type="text"
+              name="first-name"
+              required
+              placeholder="John"
+              class="input-field"
+            >
           </div>
-          <p class="text-terminal-green text-sm mb-2">
-            [SUCCESS] Message delivered
-          </p>
-          <p class="text-text-muted text-xs">
-            Connection closed. Response ETA: &lt; 24h
-          </p>
+          <div>
+            <label class="text-gray-700 text-sm font-medium mb-1.5 block">Last Name</label>
+            <input
+              v-model="form.lastName"
+              type="text"
+              name="last-name"
+              required
+              placeholder="Doe"
+              class="input-field"
+            >
+          </div>
         </div>
 
-        <!-- Form -->
-        <form v-else class="flex flex-col w-full space-y-4" @submit.prevent="handleSubmit">
-          <p class="text-terminal-green font-mono text-sm mb-4">
-            <span class="text-terminal-cyan">$</span> Ready to bring your ideas to life? Let's connect.
-          </p>
+        <div>
+          <label class="text-gray-700 text-sm font-medium mb-1.5 block">Email</label>
+          <input
+            v-model="form.email"
+            type="email"
+            name="email"
+            required
+            placeholder="john@example.com"
+            class="input-field"
+          >
+        </div>
 
-          <div class="flex flex-col sm:flex-row gap-4 w-full">
-            <div class="flex-1">
-              <label class="text-text-muted text-xs font-mono mb-1 block">first_name:</label>
-              <input
-                v-model="form.firstName"
-                type="text"
-                name="first-name"
-                required
-                class="w-full input-field"
-              >
-            </div>
-            <div class="flex-1">
-              <label class="text-text-muted text-xs font-mono mb-1 block">last_name:</label>
-              <input
-                v-model="form.lastName"
-                type="text"
-                name="last-name"
-                required
-                class="w-full input-field"
-              >
-            </div>
-          </div>
+        <div>
+          <label class="text-gray-700 text-sm font-medium mb-1.5 block">Message</label>
+          <textarea
+            v-model="form.message"
+            name="subject"
+            required
+            placeholder="Tell me about your project..."
+            class="input-field h-[140px] resize-y"
+          />
+        </div>
 
-          <div>
-            <label class="text-text-muted text-xs font-mono mb-1 block">email:</label>
-            <input
-              v-model="form.email"
-              type="email"
-              name="email"
-              required
-              class="w-full input-field"
-            >
-          </div>
+        <!-- Error -->
+        <p v-if="errorMessage" class="text-red-500 text-sm">
+          {{ errorMessage }}
+        </p>
 
-          <div>
-            <label class="text-text-muted text-xs font-mono mb-1 block">message:</label>
-            <textarea
-              v-model="form.message"
-              name="subject"
-              required
-              class="w-full input-field h-[120px] resize-y"
-            />
-          </div>
-
-          <!-- Error message -->
-          <p v-if="errorMessage" class="text-terminal-red text-xs font-mono">
-            [ERROR] {{ errorMessage }}
-          </p>
-
-          <div class="pt-2">
-            <button
-              type="submit"
-              :disabled="isSubmitting"
-              class="bg-terminal-green/10 text-terminal-green border border-terminal-green/30
-                     px-8 py-3 rounded font-mono text-sm cursor-pointer
-                     transition-all duration-300 hover:bg-terminal-green/20 hover:border-terminal-green/50
-                     hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <span class="text-terminal-cyan">$</span> {{ isSubmitting ? 'sending...' : 'send --message' }}
-            </button>
-          </div>
-        </form>
-      </div>
+        <button
+          type="submit"
+          :disabled="isSubmitting"
+          class="btn-primary w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </form>
     </div>
   </section>
 </template>
@@ -105,13 +96,12 @@ const { form, isSubmitting, isSuccess, errorMessage, handleSubmit } = useContact
 
 <style scoped>
 .input-field {
-  @apply px-4 py-3 bg-dark-deeper/50 border border-border-subtle rounded
-         text-sm font-mono text-text-primary transition-all duration-300
-         focus:outline-none focus:border-terminal-green/50 focus:shadow-[0_0_0_2px_rgba(0,255,65,0.1)]
-         focus:bg-dark-deeper/70;
+  @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-lg
+         text-sm text-gray-900 transition-all duration-300
+         focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10;
 }
 
 .input-field::placeholder {
-  @apply text-text-muted;
+  @apply text-gray-400;
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <AnimatedBackground />
     <NavDesktopNav :links="navLinks" />
     <NavMobileNav :links="navLinks" />
     <main>
@@ -12,9 +11,10 @@
 
 <script setup lang="ts">
 const navLinks = [
+  { label: 'Home', href: '#profile' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
+  { label: 'Project', href: '#work' },
   { label: 'Contact', href: '#contact' },
 ]
 </script>

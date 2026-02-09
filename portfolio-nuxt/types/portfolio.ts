@@ -4,36 +4,35 @@ export interface Social {
   icon: string
 }
 
-export interface HeroData {
-  name: string
-  role: string
-  tagline: string
-  profileImage: string
-  terminalCommands: string[]
-  socials: Social[]
+export interface HeroStat {
+  value: string
+  label: string
 }
 
-export interface SystemInfo {
-  label: string
-  value: string
-  color?: string
+export interface HeroData {
+  name: string
+  firstName: string
+  role: string
+  tagline: string
+  description: string
+  profileImage: string
+  stats: HeroStat[]
+  socials: Social[]
 }
 
 export interface AboutData {
   description: string
-  systemInfo: SystemInfo[]
-  certifications: { title: string; issuer: string; icon: string }[]
+  certifications: { title: string; issuer: string }[]
 }
 
 export interface ServiceData {
-  status: 'running' | 'pending' | 'deploying'
+  number: string
   title: string
   description: string
   stack: string[]
 }
 
 export interface ExperienceData {
-  hash: string
   role: string
   company: string
   date: string
@@ -50,10 +49,25 @@ export interface ProjectData {
   image: string
   alt: string
   title: string
-  description: string
+  category: string
+  year: string
   tags: string[]
   link: string
-  status: 'deployed' | 'building' | 'staging'
+}
+
+export interface TestimonialData {
+  quote: string
+  name: string
+  role: string
+  image: string
+  socials: { icon: string; url: string }[]
+}
+
+export interface ArticleData {
+  date: string
+  readTime: string
+  title: string
+  tags: string[]
 }
 
 export interface PortfolioData {
@@ -63,4 +77,6 @@ export interface PortfolioData {
   experience: ExperienceData[]
   skills: SkillCategory[]
   projects: ProjectData[]
+  testimonials: TestimonialData[]
+  articles: ArticleData[]
 }

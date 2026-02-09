@@ -1,55 +1,40 @@
 <template>
-  <section id="services" class="relative px-6 md:px-16 lg:px-40 py-20 flex flex-col justify-center">
-    <UiSectionHeader subtitle="services" title="Pipeline Stages" />
+  <section id="services" class="relative px-6 md:px-16 lg:px-20 py-24 bg-white">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="section-label">SERVICES</div>
 
-    <!-- Pipeline connecting line (desktop) -->
-    <div class="hidden lg:block max-w-[1200px] mx-auto w-full relative">
-      <div class="absolute top-[50%] left-[10%] right-[10%] h-[1px] bg-border-subtle z-0">
-        <div class="absolute top-0 left-0 h-full bg-terminal-green/30 pipeline-fill" />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px] mx-auto w-full relative z-10">
-      <UiCardModern
-        v-for="(service, i) in services"
-        :key="service.title"
-        show-header
-        :header-title="`stage-${i + 1}.yml`"
-      >
-        <div class="font-mono">
-          <!-- Status indicator -->
-          <div class="flex items-center gap-2 mb-4">
-            <span
-              class="w-2 h-2 rounded-full"
-              :class="{
-                'bg-terminal-green shadow-[0_0_6px_rgba(0,255,65,0.6)]': service.status === 'running',
-                'bg-terminal-amber shadow-[0_0_6px_rgba(255,183,0,0.6)]': service.status === 'pending',
-                'bg-terminal-cyan shadow-[0_0_6px_rgba(0,212,255,0.6)] animate-pulse-glow': service.status === 'deploying',
-              }"
-            />
-            <span
-              class="text-xs uppercase tracking-wider"
-              :class="{
-                'text-terminal-green': service.status === 'running',
-                'text-terminal-amber': service.status === 'pending',
-                'text-terminal-cyan': service.status === 'deploying',
-              }"
-            >{{ service.status }}</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200">
+        <div
+          v-for="service in services"
+          :key="service.title"
+          v-fade-in
+          class="bg-white p-8 md:p-10 flex flex-col group hover:bg-gray-50 transition-colors duration-300"
+        >
+          <!-- Number + Title -->
+          <div class="flex items-start gap-4 mb-4">
+            <span class="text-sm font-semibold text-gray-400">{{ service.number }}</span>
+            <h3 class="text-lg font-bold text-gray-900 tracking-wide">{{ service.title }}</h3>
           </div>
 
-          <h3 class="text-lg font-semibold text-text-primary mb-3 font-sans">
-            {{ service.title }}
-          </h3>
-          <p class="text-text-secondary leading-relaxed mb-6 text-sm font-sans">
+          <!-- Description -->
+          <p class="text-gray-500 text-sm leading-relaxed mb-6 pl-8">
             {{ service.description }}
           </p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <UiTagPill v-for="tech in service.stack" :key="tech" :variant="i % 2 === 0 ? 'cyan' : 'green'">
-              {{ tech }}
-            </UiTagPill>
-          </div>
+
+          <!-- Read more link -->
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 text-sm font-medium text-gray-900 no-underline
+                   pl-8 mt-auto hover:text-accent transition-colors"
+            @click.prevent
+          >
+            Read more
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
-      </UiCardModern>
+      </div>
     </div>
   </section>
 </template>
@@ -59,14 +44,3 @@ import { portfolioData } from '~/data/portfolio'
 
 const services = portfolioData.services
 </script>
-
-<style scoped>
-.pipeline-fill {
-  animation: pipelineFill 3s ease-out forwards;
-  width: 0;
-}
-
-@keyframes pipelineFill {
-  to { width: 100%; }
-}
-</style>

@@ -4,12 +4,10 @@
     target="_blank"
     rel="noopener noreferrer"
     :aria-label="label"
-    class="w-[50px] h-[50px] flex items-center justify-center bg-dark-card border border-border-subtle
-           rounded transition-all duration-300
-           hover:-translate-y-1.5 hover:scale-110 hover:shadow-glow
-           hover:bg-terminal-green/10 hover:border-terminal-green/30"
+    class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full
+           transition-all duration-300 hover:border-accent hover:bg-accent/5"
   >
-    <img :src="useAsset(icon)" :alt="label" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity">
+    <img :src="useAsset(icon)" :alt="label" class="h-4 opacity-60 hover:opacity-100 transition-opacity">
   </a>
 </template>
 

@@ -1,16 +1,11 @@
 <template>
   <div
     v-fade-in
-    class="terminal-window transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
-           hover:-translate-y-1 hover:shadow-glow hover:border-border-glow"
+    class="card-clean"
     :class="[padding]"
   >
-    <!-- Terminal header dots -->
-    <div v-if="showHeader" class="terminal-header">
-      <div class="terminal-dot terminal-dot-red" />
-      <div class="terminal-dot terminal-dot-amber" />
-      <div class="terminal-dot terminal-dot-green" />
-      <span v-if="headerTitle" class="terminal-title">{{ headerTitle }}</span>
+    <div v-if="showHeader" class="px-4 py-3 border-b border-gray-100 bg-gray-50">
+      <span v-if="headerTitle" class="text-xs text-gray-500 font-medium">{{ headerTitle }}</span>
     </div>
     <div :class="showHeader ? 'p-6' : ''">
       <slot />

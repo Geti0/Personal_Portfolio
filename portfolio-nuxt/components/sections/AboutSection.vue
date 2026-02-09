@@ -1,76 +1,38 @@
 <template>
-  <section id="about" class="relative px-6 md:px-16 lg:px-40 py-20 flex flex-col justify-center">
-    <UiSectionHeader subtitle="about" title="System Info" />
-
-    <div class="max-w-[1200px] mx-auto w-full">
-      <!-- Neofetch-style system info -->
-      <div v-fade-in class="terminal-window max-w-[900px] mx-auto mb-12">
-        <div class="terminal-header">
-          <div class="terminal-dot terminal-dot-red" />
-          <div class="terminal-dot terminal-dot-amber" />
-          <div class="terminal-dot terminal-dot-green" />
-          <span class="terminal-title">neofetch</span>
+  <section id="about" class="relative px-6 md:px-16 lg:px-20 py-24 bg-white">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-24">
+        <!-- Left side: label + CTA -->
+        <div v-fade-in class="lg:w-1/3">
+          <div class="section-label">WHAT I DO</div>
+          <a
+            href="#contact"
+            class="btn-primary mt-8"
+            @click.prevent="scrollTo('#contact')"
+          >
+            Let's Discuss
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
-        <div class="terminal-body">
-          <div class="flex flex-col md:flex-row gap-8">
-            <!-- ASCII-style label -->
-            <div class="text-terminal-green text-xs leading-tight font-mono whitespace-pre hidden md:block">
-   ____       _
-  / ___| ___ | |_ _   _  __ _ _ __
- | |  _ / _ \| __| | | |/ _` | '__|
- | |_| |  __/| |_| |_| | (_| | |
-  \____|\___| \__|\__,_|\__,_|_|</div>
 
-            <!-- System info lines -->
-            <div class="flex-1 space-y-2">
-              <p class="text-text-secondary text-sm leading-relaxed mb-4">
-                {{ data.description }}
-              </p>
-              <div class="border-t border-border-subtle my-4 pt-4">
-                <div v-for="info in data.systemInfo" :key="info.label" class="flex gap-2 mb-1.5 font-mono text-sm">
-                  <span
-                    class="font-semibold min-w-[120px]"
-                    :class="{
-                      'text-terminal-cyan': info.color === 'cyan',
-                      'text-terminal-green': info.color === 'green',
-                      'text-terminal-amber': info.color === 'amber',
-                    }"
-                  >{{ info.label }}:</span>
-                  <span class="text-text-secondary">{{ info.value }}</span>
-                </div>
-              </div>
-              <!-- Color palette bar -->
-              <div class="flex gap-1 mt-4">
-                <div class="w-6 h-3 rounded-sm bg-terminal-red" />
-                <div class="w-6 h-3 rounded-sm bg-terminal-green" />
-                <div class="w-6 h-3 rounded-sm bg-terminal-amber" />
-                <div class="w-6 h-3 rounded-sm bg-terminal-blue" />
-                <div class="w-6 h-3 rounded-sm bg-terminal-purple" />
-                <div class="w-6 h-3 rounded-sm bg-terminal-cyan" />
-                <div class="w-6 h-3 rounded-sm bg-terminal-magenta" />
-                <div class="w-6 h-3 rounded-sm bg-text-primary" />
-              </div>
-            </div>
-          </div>
+        <!-- Right side: description -->
+        <div v-fade-in="0.2" class="lg:w-2/3">
+          <p class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 leading-snug">
+            {{ data.description }}<sup class="text-accent text-lg align-super">&reg;</sup>
+          </p>
+          <a
+            href="#services"
+            class="inline-flex items-center gap-2 text-gray-900 font-medium text-sm mt-8 no-underline hover:text-accent transition-colors"
+            @click.prevent="scrollTo('#services')"
+          >
+            About us
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+          </a>
         </div>
-      </div>
-
-      <!-- Certification cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        <UiCardModern
-          v-for="cert in data.certifications"
-          :key="cert.title"
-          show-header
-          :header-title="cert.issuer"
-        >
-          <div class="font-mono text-sm">
-            <p class="text-terminal-green mb-1">
-              <span class="text-terminal-cyan">$</span> cat cert.txt
-            </p>
-            <p class="text-text-primary font-semibold mb-1">{{ cert.title }}</p>
-            <p class="text-text-muted text-xs">{{ cert.issuer }}</p>
-          </div>
-        </UiCardModern>
       </div>
     </div>
   </section>
@@ -80,4 +42,9 @@
 import { portfolioData } from '~/data/portfolio'
 
 const data = portfolioData.about
+
+function scrollTo(href: string) {
+  const el = document.querySelector(href)
+  el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 </script>
