@@ -18,6 +18,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   app: {
+    baseURL: '/Personal_Portfolio/',
     head: {
       htmlAttrs: { lang: 'en' },
       title: 'Getuar Kelmendi | DevOps Engineer',
