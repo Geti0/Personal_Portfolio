@@ -1,26 +1,33 @@
 <template>
   <section
     id="profile"
-    class="relative bg-dark min-h-screen flex flex-col justify-between px-6 md:px-16 lg:px-20 pt-20 pb-12"
+    class="relative bg-dark min-h-screen flex flex-col px-6 md:px-16 lg:px-20 pt-24 pb-12"
   >
-    <!-- Large typography -->
-    <div v-fade-in class="flex-1 flex flex-col justify-center">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-16">
-        <!-- Big name -->
-        <div class="flex-1">
-          <h1 class="text-[clamp(3rem,10vw,8rem)] font-extrabold text-white leading-[0.95] tracking-tight">
-            {{ data.firstName }}<span class="text-accent">*</span>
-          </h1>
+    <!-- Main content area -->
+    <div v-fade-in class="flex-1 flex flex-col justify-center max-w-[1200px] mx-auto w-full">
+      <!-- Large name -->
+      <h1 class="text-[clamp(4rem,12vw,10rem)] font-extrabold text-white leading-[0.9] tracking-tighter mb-12">
+        {{ data.firstName }}<span class="text-accent">*</span>
+      </h1>
+
+      <!-- Description row -->
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-20 max-w-[900px]">
+        <div class="lg:max-w-[520px]">
+          <p class="text-gray-400 text-lg md:text-xl leading-relaxed">
+            Hi, I am {{ data.firstName }}<span class="text-accent">*</span> I am a
+            <span class="text-white font-semibold">{{ data.role.toLowerCase() }}</span> and
+            highly talented <span class="text-white font-semibold">infrastructure architect</span>
+            with over a decade of experience in the field.
+          </p>
         </div>
 
-        <!-- Description + CTA -->
-        <div class="lg:max-w-[400px] lg:pb-4">
-          <p class="text-gray-400 text-base leading-relaxed mb-6">
-            {{ data.description }}
-          </p>
+        <!-- CTA -->
+        <div class="shrink-0">
           <a
             href="#contact"
-            class="btn-primary"
+            class="inline-flex items-center gap-3 bg-accent text-white font-medium text-sm
+                   px-7 py-3.5 rounded-full transition-all duration-300
+                   hover:bg-accent-dark hover:shadow-lg no-underline"
             @click.prevent="scrollTo('#contact')"
           >
             Let's Discuss
@@ -32,19 +39,17 @@
       </div>
     </div>
 
-    <!-- Stats row -->
-    <div v-fade-in="0.3" class="flex flex-wrap gap-8 md:gap-16 mt-12 pt-8 border-t border-gray-800">
+    <!-- Stats row (pinned to bottom) -->
+    <div v-fade-in="0.3" class="max-w-[1200px] mx-auto w-full flex flex-wrap gap-10 md:gap-20 pt-10 mt-auto border-t border-gray-800">
       <div v-for="stat in data.stats" :key="stat.label">
-        <p class="text-3xl md:text-4xl font-bold text-white">{{ stat.value }}</p>
-        <p class="text-gray-500 text-sm mt-1">{{ stat.label }}</p>
+        <p class="text-3xl md:text-5xl font-bold text-white leading-none">{{ stat.value }}</p>
+        <p class="text-gray-500 text-xs mt-2 tracking-wider">{{ stat.label }}</p>
       </div>
     </div>
 
-    <!-- Decorative green asterisk -->
-    <div class="absolute top-1/4 right-[15%] hidden lg:block">
-      <svg class="w-16 h-16 text-accent opacity-60" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2v8.5L5.5 5.5l1-1L12 10V2zm0 20v-8.5l6.5 5L17.5 19.5 12 14v8zm-10-10h8.5L5.5 5.5l1 1L12 12H2zm20 0h-8.5l5 6.5-1 1L12 12h10z"/>
-      </svg>
+    <!-- Decorative asterisk -->
+    <div class="absolute top-[30%] right-[10%] hidden lg:block pointer-events-none">
+      <span class="text-accent text-[120px] font-bold leading-none opacity-40 select-none">*</span>
     </div>
   </section>
 </template>

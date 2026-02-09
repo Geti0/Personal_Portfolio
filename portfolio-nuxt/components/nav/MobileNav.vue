@@ -1,12 +1,14 @@
 <template>
   <nav
     class="flex lg:hidden justify-between items-center sticky top-0 z-[1000]
-           bg-white/95 backdrop-blur-[20px] border-b border-gray-100
-           shadow-sm px-6 py-4"
+           backdrop-blur-[20px] px-6 py-4 transition-all duration-500"
+    :class="isScrolled
+      ? 'bg-white/95 border-b border-gray-200 shadow-sm'
+      : 'bg-dark/80'"
   >
     <!-- Logo -->
     <a href="#profile" class="flex items-center gap-1 no-underline" @click.prevent="navigateAndClose('#profile')">
-      <span class="text-lg font-bold text-gray-900">GETUAR</span>
+      <span class="text-lg font-bold transition-colors duration-500" :class="isScrolled ? 'text-gray-900' : 'text-white'">GETUAR</span>
       <span class="text-accent text-lg font-bold">*</span>
     </a>
 
@@ -18,16 +20,25 @@
         @click="toggleMenu"
       >
         <span
-          class="w-full h-[2px] bg-gray-900 rounded transition-all duration-300 origin-center"
-          :class="isOpen ? 'rotate-45 translate-y-[9px]' : ''"
+          class="w-full h-[2px] rounded transition-all duration-300 origin-center"
+          :class="[
+            isOpen ? 'rotate-45 translate-y-[9px]' : '',
+            isScrolled ? 'bg-gray-900' : 'bg-white'
+          ]"
         />
         <span
-          class="w-full h-[2px] bg-gray-900 rounded transition-all duration-300"
-          :class="isOpen ? 'opacity-0' : ''"
+          class="w-full h-[2px] rounded transition-all duration-300"
+          :class="[
+            isOpen ? 'opacity-0' : '',
+            isScrolled ? 'bg-gray-900' : 'bg-white'
+          ]"
         />
         <span
-          class="w-full h-[2px] bg-gray-900 rounded transition-all duration-300 origin-center"
-          :class="isOpen ? '-rotate-45 -translate-y-[9px]' : ''"
+          class="w-full h-[2px] rounded transition-all duration-300 origin-center"
+          :class="[
+            isOpen ? '-rotate-45 -translate-y-[9px]' : '',
+            isScrolled ? 'bg-gray-900' : 'bg-white'
+          ]"
         />
       </button>
 
@@ -36,7 +47,7 @@
         class="absolute top-[calc(100%+16px)] right-0 bg-white backdrop-blur-[20px]
                rounded-lg border border-gray-200 w-[220px] overflow-hidden
                shadow-lg transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-        :class="isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'"
+        :class="isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'"
       >
         <ul class="list-none p-0 m-0">
           <li v-for="(link, i) in links" :key="link.href">
@@ -67,6 +78,7 @@ defineProps<{
   links: { label: string; href: string }[]
 }>()
 
+const { isScrolled } = useStickyNav()
 const isOpen = ref(false)
 
 function toggleMenu() {
