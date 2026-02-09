@@ -1,23 +1,33 @@
+/* Tablet and smaller desktop */
 @media screen and (max-width: 1400px) {
+  section {
+    padding: var(--spacing-lg) 5rem;
+  }
+
   #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
+    gap: 4rem;
+    min-height: 90vh;
   }
-  .section__text{
-    margin-top: 50%;
+
+  .profile-img-wrapper {
+    width: 350px;
+    height: 350px;
   }
+
+  .title {
+    font-size: 3rem;
+  }
+
   .about-containers {
     flex-wrap: wrap;
   }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-  #section__text{
-    margin-top: 25%;
+
+  .details-container {
+    min-width: 250px;
   }
 }
 
+/* Tablet */
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
@@ -25,151 +35,290 @@
 
   #hamburger-nav {
     display: flex;
+    justify-content: space-between;
   }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
+
+  section {
+    padding: var(--spacing-lg) 3rem;
+    min-height: auto;
   }
-  #profile,
-  .section-container {
-    display: block;
+
+  #profile {
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 6rem;
   }
+
+  .profile-img-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .section__text {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .section__text__p2 {
+    font-size: 1.5rem;
+  }
+
   .arrow {
     display: none;
   }
-  section,
-  .section-container {
-    height: fit-content;
-  }
-  section {
-    margin: 0 5%;
-  }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
-  }
+
   .about-containers {
-    margin-top: 0;
+    gap: 1.5rem;
+  }
+
+  .details-container {
+    min-width: 200px;
+    padding: 2rem;
+  }
+
+  .article-container {
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    padding: 2.5rem 3rem;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .section__text{
-    margin-top: 70%;
+/* Mobile */
+@media screen and (max-width: 768px) {
+  :root {
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
   }
-  #experience{
-    margin-top: -28%;
+
+  section {
+    padding: var(--spacing-lg) 2rem;
   }
-  #contact,
-  footer {
-    height: 40vh;
-  }
-  #about{
-    margin-top: 10%;
-  }
-  .about-containers{
-    margin-top: 30px;
-  }
-  .section__text{
-    margin-top: 45%;
-  }
+
   #profile {
-    height: 83vh;
-    margin-bottom: 0;
+    padding-top: 4rem;
+    gap: 2rem;
   }
-  article {
+
+  .profile-img-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  #profile-image {
+    border-width: 3px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .section__text__p1 {
     font-size: 1rem;
   }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
+
+  .section__text__p2 {
+    font-size: 1.3rem;
   }
-  .about-containers,
-  .contact-info-upper-container,
+
+  .tagline {
+    font-size: 1rem;
+  }
+
   .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
     flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 1.5rem auto 0;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
+
+  .btn {
+    width: 100%;
     justify-content: center;
   }
-  .section__text__p2 {
-    font-size: 1.25rem;
+
+  .social-link {
+    width: 45px;
+    height: 45px;
   }
-  .title {
-    font-size: 2rem;
-  }
+
   .text-container {
-    text-align: justify;
+    padding: 2rem;
+  }
+
+  .about-containers {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .details-container {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .experience-sub-title {
+    font-size: 1.3rem;
+  }
+
+  .article-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  article {
+    width: 100%;
+  }
+
+  .project-img {
+    height: 200px;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .contact-card {
+    padding: 2rem;
+    max-width: 100%;
+  }
+
+  #contact-text {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  footer {
+    padding: 2rem 1rem;
   }
 }
 
+/* Small mobile */
+@media screen and (max-width: 480px) {
+  section {
+    padding: var(--spacing-md) 1.5rem;
+  }
 
-@media screen and (max-width: 600px) {
-  #contact-text{
-    margin-top: 10%;
+  .profile-img-wrapper {
+    width: 240px;
+    height: 240px;
   }
-  #profile-image{
-    width: 250px;
-    height: 300px;
+
+  .title {
+    font-size: 1.8rem;
   }
+
+  .section__text__p1 {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .section__text__p2 {
+    font-size: 1.1rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    height: 1.5rem;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .text-container {
+    padding: 1.5rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
+  }
+
+  .details-container {
+    padding: 1.5rem;
+  }
+
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-wrapper .icon {
+    height: 2rem;
+  }
+
   .contact-card {
-    max-width: 90%;
-    padding: 15px;
+    padding: 1.5rem;
   }
+
+  #contact-text {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
   .inline-fields {
     flex-direction: column;
-    width: 100%;
+    gap: 0;
   }
-  .details-container{
-      width: 288px;
+
+  .field input,
+  .field textarea {
+    padding: 0.875rem;
+    font-size: 0.95rem;
   }
-  #contact-text{
-    margin-top: 10%;
-  }
-  #first-name {
-    width: 200%;
-    height: 50px;
-  }
-  #last-name {
-    width: 200%;
-    height: 50px;
-  }
-  .field {
-    width: 100%;
-    margin-bottom: 15px; 
-  }
-  #subject{
-    width: 100%;
-    margin-bottom: 15px; 
-  }
-  #email{
-    width: 100%;
-    margin-bottom: 15px; 
-  }
+
   .submit-btn {
-    width: 100%; 
-    margin-top: -40px;
-    margin-bottom: 30px;
+    width: 100%;
+    padding: 0.875rem 2rem;
+  }
+
+  .project-img {
+    height: 180px;
+  }
+
+  .project-overlay p {
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  /* Animated orbs - reduce on mobile for performance */
+  .gradient-orb {
+    opacity: 0.2;
+    filter: blur(80px);
+  }
+
+  .animated-background::before {
+    filter: blur(60px);
+    opacity: 0.4;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 360px) {
+  .profile-img-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.875rem 1.5rem;
   }
 }
