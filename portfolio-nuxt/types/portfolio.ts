@@ -54,6 +54,9 @@ export interface ProjectData {
   year: string
   tags: string[]
   link: string
+  description?: string
+  details?: string[]
+  liveUrl?: string
 }
 
 export interface TestimonialData {

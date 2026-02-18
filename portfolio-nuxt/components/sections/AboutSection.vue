@@ -27,7 +27,7 @@
             class="inline-flex items-center gap-2 text-gray-900 font-medium text-sm mt-8 no-underline hover:text-accent transition-colors"
             @click.prevent="scrollTo('#services')"
           >
-            About us
+            About Me
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>

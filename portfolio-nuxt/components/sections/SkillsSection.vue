@@ -1,9 +1,9 @@
 <template>
   <section id="skills" class="relative px-6 md:px-16 lg:px-20 py-24 bg-white">
-    <div class="max-w-[1200px] mx-auto">
+    <div class="max-w-[1600px] mx-auto">
       <div class="section-label">SKILLS</div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div
           v-for="category in skills"
           :key="category.title"

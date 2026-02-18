@@ -12,7 +12,7 @@
       class="flex items-center gap-1 cursor-pointer no-underline"
       @click.prevent="scrollTo('#profile')"
     >
-      <span class="text-xl font-bold transition-colors duration-500" :class="isScrolled ? 'text-gray-900' : 'text-white'">GETUAR</span>
+      <span class="text-xl font-bold transition-colors duration-500" :class="isScrolled ? 'text-gray-900' : 'text-white'">Getuar Kelmendi</span>
       <span class="text-accent text-xl font-bold">*</span>
     </a>
 
