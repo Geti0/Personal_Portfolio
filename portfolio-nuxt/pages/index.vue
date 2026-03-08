@@ -7,6 +7,7 @@
     <SectionsExperienceSection />
     <SectionsSkillsSection />
     <SectionsTestimonialsSection />
+      <SectionsRecommendationSection />
     <SectionsArticlesSection />
     <SectionsContactSection />
   </div>

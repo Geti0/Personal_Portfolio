@@ -236,14 +236,22 @@ export const portfolioData: PortfolioData = {
   ],
 
   testimonials: [
-    {
-      quote:
-        '\u201CThe infrastructure exceeded our expectations in every way \u2014 visually striking and incredibly reliable. Their DevOps sense is unmatched, and the process was smooth finish. We\u2019re constantly getting compliments. Couldn\u2019t be happier with the outcome.\u201D',
-      name: 'Alex Johnson',
-      role: 'CTO, TechStart Inc.',
-      image: '/assets/getuar.png',
-      socials: [],
-    },
+      {
+        quote:
+          '“The HealthTech Analytics platform transformed our healthcare data strategy. The AWS infrastructure was robust, secure, and fully automated. Compliance and observability were top-notch, and the delivery was seamless. Highly recommended for any healthtech project.”',
+        name: 'Dr. Emily Carter',
+        role: 'Product Owner, HealthTech Analytics',
+        image: '/assets/healthcare.jpeg',
+        socials: [],
+      },
+      {
+        quote:
+          '“Launching the Ticket Marketplace with this team was a game-changer. The cloud setup was fast, secure, and scalable. CI/CD pipelines made deployments effortless, and the system handled high traffic with zero downtime. Outstanding work!”',
+        name: 'Michael Lee',
+        role: 'CEO, Ticket Marketplace',
+        image: '/assets/ticket.png',
+        socials: [],
+      },
   ],
 
   articles: [
